@@ -1,0 +1,68 @@
+<div class="search-box-settings">
+    <a href="/"><img src="/logo.png" alt="project logo" class="logo-settings" /></a>
+
+    <span class="form-box">
+        <input #searchInput type="text" class="form-style" placeholder="Pesquisar" />
+        <button class="button-style" (click)="submit(searchInput.value)">Buscar Dev</button>
+    </span>
+</div>
+
+<section class="section-settings">
+    <div class="profile-div">
+        <span class="profile-box">
+            <img src={{userData.avatar_url}} class="profile-picture" />
+            <span class="profile-box-data">
+                <h1>{{userData.name}}</h1>
+                <p>@{{userData.login}}</p>
+            </span>
+        </span>
+        <p><i>{{userData.bio}}</i></p>
+
+        <div class="profile-column-box">
+
+            <div class="profile-data">
+                <span class="profile-data-line">
+                    <img src="/followers.png" alt="followers icon" class="icon-settings" />
+                    <p>{{userData.followers}} seguidores</p>
+                </span>
+                <span class="profile-data-line">
+                    <img src="/following.png" alt="following icon" class="icon-settings" />
+                    <p>{{userData.following}} seguindo</p>
+                </span>
+            </div>
+
+            <div class="profile-links">
+                <span class="profile-link-line">
+                    <img src="/building.png" alt="building icon" class="icon-settings" />
+                    <p>{{userData.company}}</p>
+                </span>
+                <span class="profile-link-line">
+                    <img src="/location.png" alt="location icon" class="icon-settings" />
+                    <p>{{userData.location}}</p>
+                </span>
+                <span class="profile-link-line">
+                    <img src="/email.png" alt="email icon" class="icon-settings" />
+                    <p>{{userData.email}}</p>
+                </span>
+                <span class="profile-link-line">
+                    <img src="/website.png" alt="website icon" class="icon-settings" />
+                    <p><a href="{{userData.blog}}" target="_blank" class="url-profile">{{userData.blog}}</a></p>
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="repo-div">
+        <div *ngFor="let repo of repoData" class="repo-card">
+            <a href={{repo.html_url}} target="_blank">
+                <h2>{{ repo.name }}</h2>
+                <p>{{ repo.description || 'Sem descrição' }}</p>
+                <p>⭐ {{ repo.stargazers_count }}</p>
+                <p>Atualizado em: {{ repo.updated_at | date:'dd/MM/yyyy HH:mm' }}</p>
+            </a>
+
+        </div>
+    </div>
+</section>

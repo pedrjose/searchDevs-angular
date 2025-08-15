@@ -1,0 +1,186 @@
+.logo-settings {
+    height: 2rem;
+}
+
+.search-box-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.button-style {
+    
+                    display: inline-block;
+                    outline: 0;
+                    border: none;
+                    cursor: pointer;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    font-size: 13px;
+                    height: 25px;
+                    background-color: #9147ff;
+                    color: white;
+                    padding: 0 10px;
+                    
+                
+}
+
+.button-style:hover {
+                        background-color: #772ce8;
+                    }
+
+.form-style {
+    
+                    border: 0;
+                    outline: 0;
+                    color: rgb(60, 66, 87);
+                    background-color: rgb(255, 255, 255);
+                    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    height: 1rem;
+                    padding: 4px 8px;
+                    margin-right: .5rem;
+                    vertical-align: middle;
+                    transition: background-color .24s,box-shadow .24s;
+                    transition-property: background-color, box-shadow;
+                    transition-duration: 0.24s, 0.24s;
+                    transition-timing-function: ease, ease;
+                    transition-delay: 0s, 0s;
+                    
+                
+}
+
+.form-style:focus{
+                        box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(58 151 212 / 36%) 0px 0px 0px 4px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+                    }
+
+.section-settings{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin-bottom: -1rem;
+}
+
+.profile-div {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 5px;
+    width: 15rem;
+    height: 90%;
+}
+
+.profile-box-data {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.profile-picture {
+    height: 5rem;
+    width: 5rem;          
+    border-radius: 50%;   
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.profile-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.icon-settings {
+    height: 1rem;
+}
+
+.profile-column-box {
+    display: flex;
+    align-items: flex-start;
+    justify-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-data {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.profile-links {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.profile-data-line,
+.profile-link-line {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-bottom: -1.5rem;
+    gap: .5rem;
+}
+
+
+.repo-div {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    border-radius: 5px;
+    width: 25rem;
+    height: 90%;
+}
+
+.url-profile {
+    font-weight:bolder;
+    width: 1rem;
+}
+
+.url-profile:hover {
+    font-weight: lighter;
+}
+
+.repo-card {
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    width: 20rem;
+    font-size: 8px;
+    height: 10rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.repo-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
