@@ -43,8 +43,9 @@ export class ProfileComponent implements OnInit {
 
   submit(valor: string) {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`/profile/${valor}`]).then(() => {});
-      window.location.reload();
+      this.router.navigate([`/profile/${valor}`]).then(() => {
+        window.location.reload();
+      });
     });
   }
 }
