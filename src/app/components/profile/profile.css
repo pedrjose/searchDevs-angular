@@ -184,3 +184,33 @@ a {
     text-decoration: none;
     cursor: pointer;
   }
+
+@media (max-width: 768px) {
+    .logo-settings {
+    height: 1rem;
+}
+
+.form-style {       
+    width: 5rem;   
+}
+
+.section-settings{
+    flex-direction: column;
+}
+
+.profile-div {
+    width: 20rem;
+    margin-top: 27rem;
+}
+
+.repo-div {
+    margin-top: 1rem;
+    width: 20rem;
+}
+
+.repo-card {
+    width: 17rem;
+    font-size: 8px;
+    height: 8rem;
+}
+}
