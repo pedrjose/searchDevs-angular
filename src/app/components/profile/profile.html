@@ -8,61 +8,87 @@
 </div>
 
 <section class="section-settings">
-    <div class="profile-div">
+    <!-- PERFIL -->
+    <div *ngIf="loadingUser">
+        <p>Carregando perfil...</p>
+    </div>
+
+    <div class="profile-div" *ngIf="!loadingUser && hasUserData; else semPerfil">
         <span class="profile-box">
-            <img src={{userData.avatar_url}} class="profile-picture" />
+            <img [src]="userData?.avatar_url || '/default-avatar.png'" class="profile-picture" />
             <span class="profile-box-data">
-                <h1>{{userData.name}}</h1>
-                <p>@{{userData.login}}</p>
+                <h1>{{ userData?.name || 'Sem informação' }}</h1>
+                <p>@{{ userData?.login || 'Sem informação' }}</p>
             </span>
         </span>
-        <p><i>{{userData.bio}}</i></p>
+        <p><i>{{ userData?.bio || 'Sem informação' }}</i></p>
 
         <div class="profile-column-box">
-
+            <!-- DADOS SEGUIDORES -->
             <div class="profile-data">
                 <span class="profile-data-line">
                     <img src="/followers.png" alt="followers icon" class="icon-settings" />
-                    <p>{{userData.followers}} seguidores</p>
+                    <p>{{ userData?.followers ?? 'Sem informação' }} seguidores</p>
                 </span>
                 <span class="profile-data-line">
                     <img src="/following.png" alt="following icon" class="icon-settings" />
-                    <p>{{userData.following}} seguindo</p>
+                    <p>{{ userData?.following ?? 'Sem informação' }} seguindo</p>
                 </span>
             </div>
 
+            <!-- LINKS -->
             <div class="profile-links">
                 <span class="profile-link-line">
                     <img src="/building.png" alt="building icon" class="icon-settings" />
-                    <p>{{userData.company}}</p>
+                    <p>{{ userData?.company || 'Sem informação' }}</p>
                 </span>
                 <span class="profile-link-line">
                     <img src="/location.png" alt="location icon" class="icon-settings" />
-                    <p>{{userData.location}}</p>
+                    <p>{{ userData?.location || 'Sem informação' }}</p>
                 </span>
                 <span class="profile-link-line">
                     <img src="/email.png" alt="email icon" class="icon-settings" />
-                    <p>{{userData.email}}</p>
+                    <p>{{ userData?.email || 'Sem informação' }}</p>
                 </span>
                 <span class="profile-link-line">
                     <img src="/website.png" alt="website icon" class="icon-settings" />
-                    <p><a href="{{userData.blog}}" target="_blank" class="url-profile">{{userData.blog}}</a></p>
+                    <p>
+                        <ng-container *ngIf="userData?.blog; else noBlog">
+                            <a [href]="userData?.blog" target="_blank" class="url-profile">
+                                {{ userData?.blog }}
+                            </a>
+                        </ng-container>
+                        <ng-template #noBlog>Sem informação</ng-template>
+                    </p>
                 </span>
             </div>
-
         </div>
-
     </div>
 
-    <div class="repo-div">
+    <ng-template #semPerfil>
+        <p>Perfil não encontrado.</p>
+    </ng-template>
+
+    <!-- REPOSITÓRIOS -->
+    <div *ngIf="loadingRepos">
+        <p>Carregando repositórios...</p>
+    </div>
+
+    <div class="repo-div" *ngIf="!loadingRepos && (repoData?.length ?? 0) > 0; else semRepos">
         <div *ngFor="let repo of repoData" class="repo-card">
-            <a href={{repo.html_url}} target="_blank">
-                <h2>{{ repo.name }}</h2>
-                <p>{{ repo.description || 'Sem descrição' }}</p>
-                <p>⭐ {{ repo.stargazers_count }}</p>
-                <p>Atualizado em: {{ repo.updated_at | date:'dd/MM/yyyy HH:mm' }}</p>
+            <a [href]="repo?.html_url || '#'" target="_blank">
+                <h2>{{ repo?.name || 'Sem informação' }}</h2>
+                <p>{{ repo?.description || 'Sem descrição' }}</p>
+                <p>⭐ {{ repo?.stargazers_count ?? 0 }}</p>
+                <p>
+                    Atualizado em:
+                    {{ repo?.updated_at ? (repo?.updated_at | date:'dd/MM/yyyy HH:mm') : 'Sem informação' }}
+                </p>
             </a>
-
         </div>
     </div>
+
+    <ng-template #semRepos>
+        <p>Não há repositórios para exibir.</p>
+    </ng-template>
 </section>
