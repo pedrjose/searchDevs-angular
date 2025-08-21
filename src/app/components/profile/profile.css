@@ -184,6 +184,12 @@
   text-decoration: underline;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .section-settings {
     flex-direction: column;
