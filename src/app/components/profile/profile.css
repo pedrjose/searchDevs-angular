@@ -194,4 +194,7 @@
     width: 100%;
     max-width: 420px;
   }
+  .logo-settings{
+    height: 1.5rem;
+  }
 }
