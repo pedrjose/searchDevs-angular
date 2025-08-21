@@ -1,56 +1,55 @@
 <div class="search-box-settings">
-    <a href="/"><img src="/logo.png" alt="project logo" class="logo-settings" /></a>
+    <a href="/">
+        <img src="/logo.png" alt="project logo" class="logo-settings" />
+    </a>
 
-    <span class="form-box">
-        <input #searchInput type="text" class="form-style" placeholder="Pesquisar" />
-        <button class="button-style" (click)="submit(searchInput.value)">Buscar Dev</button>
-    </span>
+    <div class="form-box">
+        <input #searchInput type="text" class="form-style" placeholder="🔍 Buscar desenvolvedores..." />
+        <button class="button-style" (click)="submit(searchInput.value)">Buscar</button>
+    </div>
 </div>
 
 <section class="section-settings">
-    <!-- PERFIL -->
     <div *ngIf="loadingUser">
         <p>Carregando perfil...</p>
     </div>
 
     <div class="profile-div" *ngIf="!loadingUser && hasUserData; else semPerfil">
-        <span class="profile-box">
+        <div class="profile-box">
             <img [src]="userData?.avatar_url || '/default-avatar.png'" class="profile-picture" />
-            <span class="profile-box-data">
+            <div class="profile-box-data">
                 <h1>{{ userData?.name || 'Sem informação' }}</h1>
-                <p>@{{ userData?.login || 'Sem informação' }}</p>
-            </span>
-        </span>
-        <p><i>{{ userData?.bio || 'Sem informação' }}</i></p>
+                <p class="username">@{{ userData?.login || 'Sem informação' }}</p>
+            </div>
+        </div>
+        <p class="bio"><i>{{ userData?.bio || 'Sem informação' }}</i></p>
 
         <div class="profile-column-box">
-            <!-- DADOS SEGUIDORES -->
             <div class="profile-data">
-                <span class="profile-data-line">
+                <div class="profile-data-line">
                     <img src="/followers.png" alt="followers icon" class="icon-settings" />
                     <p>{{ userData?.followers ?? 'Sem informação' }} seguidores</p>
-                </span>
-                <span class="profile-data-line">
+                </div>
+                <div class="profile-data-line">
                     <img src="/following.png" alt="following icon" class="icon-settings" />
                     <p>{{ userData?.following ?? 'Sem informação' }} seguindo</p>
-                </span>
+                </div>
             </div>
 
-            <!-- LINKS -->
             <div class="profile-links">
-                <span class="profile-link-line">
+                <div class="profile-link-line">
                     <img src="/building.png" alt="building icon" class="icon-settings" />
                     <p>{{ userData?.company || 'Sem informação' }}</p>
-                </span>
-                <span class="profile-link-line">
+                </div>
+                <div class="profile-link-line">
                     <img src="/location.png" alt="location icon" class="icon-settings" />
                     <p>{{ userData?.location || 'Sem informação' }}</p>
-                </span>
-                <span class="profile-link-line">
+                </div>
+                <div class="profile-link-line">
                     <img src="/email.png" alt="email icon" class="icon-settings" />
                     <p>{{ userData?.email || 'Sem informação' }}</p>
-                </span>
-                <span class="profile-link-line">
+                </div>
+                <div class="profile-link-line">
                     <img src="/website.png" alt="website icon" class="icon-settings" />
                     <p>
                         <ng-container *ngIf="userData?.blog; else noBlog">
@@ -60,7 +59,7 @@
                         </ng-container>
                         <ng-template #noBlog>Sem informação</ng-template>
                     </p>
-                </span>
+                </div>
             </div>
         </div>
     </div>
@@ -69,7 +68,6 @@
         <p>Perfil não encontrado.</p>
     </ng-template>
 
-    <!-- REPOSITÓRIOS -->
     <div *ngIf="loadingRepos">
         <p>Carregando repositórios...</p>
     </div>

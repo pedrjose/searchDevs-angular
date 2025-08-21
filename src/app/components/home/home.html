@@ -1,8 +1,10 @@
 <section class="section-settings">
-  <img src="/logo.png" alt="project logo" />
+  <img src="/logo.png" alt="Project Logo" class="logo" />
 
-  <span class="form-box">
-    <input #searchInput type="text" class="form-style" placeholder="Pesquisar" />
-    <button class="button-style" (click)="submit(searchInput.value)">Buscar Dev</button>
-  </span>
+  <div class="form-box">
+    <input #searchInput type="text" class="form-style" placeholder="🔍 Buscar desenvolvedores..." />
+    <button class="button-style" (click)="submit(searchInput.value)">
+      Buscar
+    </button>
+  </div>
 </section>
